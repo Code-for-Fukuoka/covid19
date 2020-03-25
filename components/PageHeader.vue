@@ -9,6 +9,7 @@
     <div class="date">
       <span>最終更新 </span>
       <time :datetime="formattedDate">{{ date }}</time>
+      <span> （平日17:00頃更新） </span>
     </div>
   </div>
 </template>
