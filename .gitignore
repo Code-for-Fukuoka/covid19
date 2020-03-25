@@ -96,3 +96,6 @@ sw.*
 
 # Nuxt
 nuxt.config.ts
+
+# Data
+/data/data.json
