@@ -15,8 +15,8 @@
         <DesktopFlowSvg />
       </div>
       <div class="only-sp">
-        <div class="Flow-Card-Parts">
-<!--          <div class="mb-5">
+<!--        <div class="Flow-Card-Parts">
+          <div class="mb-5">
             <img
               src="/flow/sp/sp_flow_01_01@2x.png"
               alt="発症前２週間以内の出来ごとと症状／「新型コロナウイルス感染者」と濃厚接触をした方／発熱または呼吸器症状"
@@ -36,7 +36,7 @@
               />
             </a>
           </div>
-        </div>
+        </div> -->
         <div class="Flow-Card-Parts">
           <div class="mx-2 mb-5">
             <img
@@ -199,7 +199,7 @@
           </div>
         </div>
       </div>
-      <a
+<!--      <a
         href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
         target="_blank"
         rel="noopener"
@@ -209,7 +209,7 @@
         <v-icon class="Flow-Card-Button-ExternalLinkIcon" size="20">
           mdi-open-in-new
         </v-icon>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
