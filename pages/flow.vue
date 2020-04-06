@@ -15,28 +15,6 @@
         <DesktopFlowSvg />
       </div>
       <div class="only-sp">
-<!--        <div class="Flow-Card-Parts">
-          <div class="mb-5">
-            <img
-              src="/flow/sp/sp_flow_01_01@2x.png"
-              alt="発症前２週間以内の出来ごとと症状／「新型コロナウイルス感染者」と濃厚接触をした方／発熱または呼吸器症状"
-            />
-          </div>
-          <div class="mx-2 mb-5">
-            <img
-              src="/flow/sp/sp_flow_01_02@2x.png"
-              alt="流行地域への渡航・居住歴がある方 ご本人か濃厚接触をした方／呼吸器症状かつ発熱37.5℃以上"
-            />
-          </div>
-          <div>
-            <a v-scroll-to="'#consult'" href="#consult">
-              <img
-                src="/flow/sp/sp_flow_01_02_03_nav@2x.png"
-                alt="新型コロナ受診相談窓口へ"
-              />
-            </a>
-          </div>
-        </div> -->
         <div class="Flow-Card-Parts">
           <div class="mx-2 mb-5">
             <img
@@ -69,27 +47,6 @@
             </a>
           </div>
         </div>
-<!--        <div class="Flow-Card-Parts">
-          <div class="mx-2 mb-5">
-            <img
-              src="/flow/sp/sp_flow_04@2x.png"
-              alt="不安に思う方／微熱・軽い咳・感染の不安／新型コロナコールセンター 午前９時から午後９時（土日祝含む）"
-            />
-          </div>
-          <div class="TelLink">
-            <a href="tel:0570550571"
-              ><img src="/flow/sp/sp_flow_tel_01@2x.png" alt="0570-550571"
-            /></a>
-          </div>
-          <div class="mt-4">
-            <a v-scroll-to="'#consult'" href="#consult">
-              <img
-                src="/flow/sp/sp_flow_04_nav@2x.png"
-                alt="専門的な助言が必要な場合"
-              />
-            </a>
-          </div>
-        </div> -->
         <div id="consult" class="Flow-Card-Parts Flat">
           <h3 class="SodanHeader Title">
             新型コロナ受診相談窓口
@@ -114,7 +71,7 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  各保健所の電話番号は福祉保健局HPへ
+                  各保健所の電話番号はこちらから
                   <v-icon size="16">
                     mdi-open-in-new
                   </v-icon>
@@ -168,7 +125,7 @@
           <div id="pcr" class="mx-2 mb-5">
             <img
               src="/flow/sp/sp_flow_06_02@2x.png"
-              alt="PCR検査 東京都健康安全研究センター等"
+              alt="PCR検査"
             />
           </div>
           <div class="Col2Btn">
