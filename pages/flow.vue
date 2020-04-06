@@ -27,7 +27,7 @@
               src="/flow/sp/sp_flow_01_02@2x.png"
               alt="流行地域への渡航・居住歴がある方 ご本人か濃厚接触をした方／呼吸器症状かつ発熱37.5℃以上"
             />
-          </div>-->
+          </div>
           <div>
             <a v-scroll-to="'#consult'" href="#consult">
               <img
@@ -69,7 +69,7 @@
             </a>
           </div>
         </div>
-        <div class="Flow-Card-Parts">
+<!--        <div class="Flow-Card-Parts">
           <div class="mx-2 mb-5">
             <img
               src="/flow/sp/sp_flow_04@2x.png"
@@ -89,7 +89,7 @@
               />
             </a>
           </div>
-        </div>
+        </div> -->
         <div id="consult" class="Flow-Card-Parts Flat">
           <h3 class="SodanHeader Title">
             新型コロナ受診相談窓口
