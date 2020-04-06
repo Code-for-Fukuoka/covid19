@@ -110,7 +110,7 @@
               <dd>
                 <a
                   class="Link"
-                  href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+                  href="https://www.city.fukuoka.lg.jp/data/open/cnt/3/72498/1/nCoV_flyer_200228.pdf?20200312113320"
                   target="_blank"
                   rel="noopener"
                 >
@@ -130,10 +130,10 @@
                 土日祝 終日
               </dt>
               <dd class="TelLink">
-                <a href="tel:0353204592">
+                <a href="tel:"0927114126">
                   <img
                     src="/flow/sp/sp_flow_tel_03@2x.png"
-                    alt="03-5320-4592"
+                    alt="092-711-4126"
                   />
                 </a>
               </dd>
@@ -199,17 +199,17 @@
           </div>
         </div>
       </div>
-<!--      <a
-        href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+      <a
+        href="https://www.city.fukuoka.lg.jp/data/open/cnt/3/72498/1/nCoV_flyer_200228.pdf?20200312113320"
         target="_blank"
         rel="noopener"
         class="Flow-Card-Button"
       >
-        詳細を見る(東京都福祉保健局)
+        詳細を見る(福岡市サイト)
         <v-icon class="Flow-Card-Button-ExternalLinkIcon" size="20">
           mdi-open-in-new
         </v-icon>
-      </a> -->
+      </a>
     </div>
   </div>
 </template>
