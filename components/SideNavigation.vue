@@ -217,6 +217,7 @@ export default {
     width: 150px;
     @include lessThan($small) {
       margin-top: 0;
+      width: 50px;
     }
   }
   &-Heading {
