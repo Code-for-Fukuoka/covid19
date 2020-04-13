@@ -89,7 +89,7 @@
     "City": "福岡市",
     "COVID-19": "新型コロナウイルス感染症",
     "Measures site": "ポータルサイト",
-    "The latest updates": "福岡市内の感染動向",
+    "The latest updates": "福岡市内の最新感染動向",
     "If you have any symptoms": "こんな方はご注意ください",
     "for Families with children": "お子様をお持ちの皆様へ",
     "for Citizens": "市民の皆様へ",
