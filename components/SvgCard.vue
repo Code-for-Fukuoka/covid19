@@ -1,8 +1,9 @@
 <template>
-  <data-view class="SvgCard" :title="title" :title-id="titleId" :date="date">
+  <data-view class="SvgCard" :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <p class="Graph-Desc">
         （注）福岡市のオープンデータに含まれない項目は未掲載<br />
+        （注2）入院等には、自宅待機中の方などを含む
       </p>
     </template>
     <slot />
@@ -39,6 +40,11 @@ export default {
     },
     date: {
       type: String,
+      default: ''
+    },
+    url: {
+      type: String,
+      required: false,
       default: ''
     }
   }
