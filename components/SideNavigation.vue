@@ -97,6 +97,7 @@
     "Official statements from Task Force": "福岡市新型コロナウイルス感染症対策本部報",
     "Fukuoka City Subway Traffic": "福岡市地下鉄ラッシュ時の車内混雑状況",
     "Cancelled public events": "不特定多数の人が集まるイベントへの対応",
+    "Change stat at stations": "主要駅における人の流れの推移（内閣官房サイト）",
     "Government official website": "福岡市公式ホームページ",
     "Message from Governor Takashima": "市長からのメッセージ",
     "About us": "当サイトについて"
@@ -156,6 +157,11 @@ export default {
           title: this.$t('Fukuoka City Subway Traffic'),
           link:
             'https://subway.city.fukuoka.lg.jp/topics/detail.php?id=1006'
+        },
+        {
+          title: this.$t('Change stat at stations'),
+          link:
+            'https://corona.go.jp/#area-transition'
         },
         {
           title: this.$t('About us'),
