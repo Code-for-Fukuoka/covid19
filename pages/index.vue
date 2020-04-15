@@ -17,7 +17,7 @@
         <svg-card
           title="検査陽性者の状況"
           :title-id="'details-of-confirmed-cases'"
-          :date="Data.patients.date"
+          :date="Data.main_summary.date"
           :url="'https://ckan.open-governmentdata.org/dataset/401307_covid19_totalpatients'"
         >
           <confirmed-cases-table v-bind="confirmedCases" />
