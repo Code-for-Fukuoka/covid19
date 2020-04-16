@@ -3,6 +3,7 @@
     <template v-slot:button>
       <p class="Graph-Desc">
         （注）入院等には、自宅待機中の方などを含む<br />
+         <br />
       </p>
     </template>
     <slot />
