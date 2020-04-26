@@ -90,7 +90,7 @@
     "COVID-19": "新型コロナウイルス感染症",
     "Measures site": "ポータルサイト",
     "The latest updates": "福岡市内の感染動向",
-    "If you have any symptoms": "こんな方はご注意ください",
+    "If you have any symptoms": "新型コロナウイルス感染症について",
     "for Families with children": "お子様をお持ちの皆様へ",
     "for Citizens": "市民の皆様へ",
     "for Enterprises and Employees": "事業者の方へ",
