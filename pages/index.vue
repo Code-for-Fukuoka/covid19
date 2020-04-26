@@ -8,7 +8,7 @@
     <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
-      :url="'https://www.city.fukuoka.lg.jp/data/open/cnt/3/72498/1/0420ha.pdf?20200419233658'"
+      :url="'https://www.city.fukuoka.lg.jp/shicho/koho/health/covid19_01.html#conf'"
       :text="'自分や家族の症状に不安や心配があればまずは電話相談をどうぞ'"
       :btn-text="'相談の手順を見る'"
     />
