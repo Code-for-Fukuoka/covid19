@@ -139,11 +139,6 @@ export default {
           divider: true
         },
         {
-          icon: 'parent',
-          title: this.$t('for Families with children'),
-          link: '/parent'
-        },
-        {
           icon: 'mdi-account-multiple',
           title: this.$t('for Citizens'),
           link: 'https://www.city.fukuoka.lg.jp/shicho/koho/health/covid19_ci.html'
