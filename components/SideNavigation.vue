@@ -97,7 +97,7 @@
     "for Enterprises and Employees": "事業者の方へ",
     "Official statements from Task Force": "福岡市新型コロナウイルス感染症対策本部報",
     "Fukuoka City Subway Traffic": "福岡市地下鉄ラッシュ時の車内混雑状況",
-    "Cancelled public events": "不特定多数の人が集まるイベントへの対応",
+    "Cancelled public events": "市主催のイベント、公共施設、区役所の対応",
     "Change stat at stations": "主要駅における人の流れの推移（内閣官房サイト）",
     "Government official website": "福岡市公式ホームページ",
     "Message from Governor Takashima": "市長からのメッセージ",
