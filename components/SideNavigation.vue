@@ -91,12 +91,13 @@
     "Measures site": "ポータルサイト",
     "The latest updates": "福岡市内の感染動向",
     "If you have any symptoms": "新型コロナウイルス感染症について",
+    "Daily": "福岡市の状況　日別事例数",
     "for Families with children": "お子様をお持ちの皆様へ",
     "for Citizens": "市民の皆様へ",
     "for Enterprises and Employees": "事業者の方へ",
     "Official statements from Task Force": "福岡市新型コロナウイルス感染症対策本部報",
     "Fukuoka City Subway Traffic": "福岡市地下鉄ラッシュ時の車内混雑状況",
-    "Cancelled public events": "不特定多数の人が集まるイベントへの対応",
+    "Cancelled public events": "福岡市主催のイベント・行事等",
     "Change stat at stations": "主要駅における人の流れの推移（内閣官房サイト）",
     "Government official website": "福岡市公式ホームページ",
     "Message from Governor Takashima": "市長からのメッセージ",
@@ -130,28 +131,28 @@ export default {
           icon: 'covid',
           title: this.$t('If you have any symptoms'),
           link: 'https://www.city.fukuoka.lg.jp/hofuku/hokenyobo/health/kansen/nCorV.html#kgkd',
-          divider: true
         },
         {
-          icon: 'parent',
-          title: this.$t('for Families with children'),
-          link: '/parent'
+          icon: 'mdi-calendar-month',
+          title: this.$t('Daily'),
+          link: 'https://www.city.fukuoka.lg.jp/hofuku/hokenyobo/health/kansen/cohs.html',
+          divider: true
         },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('for Citizens'),
-          link: 'https://www.city.fukuoka.lg.jp/hofuku/hokenyobo/health/kansen/nCorV.html#ci'
+          link: 'https://www.city.fukuoka.lg.jp/shicho/koho/health/covid19_ci.html'
         },
         {
           icon: 'mdi-domain',
           title: this.$t('for Enterprises and Employees'),
-          link: 'https://www.city.fukuoka.lg.jp/hofuku/hokenyobo/health/kansen/nCorV.html#ji',
+          link: 'https://www.city.fukuoka.lg.jp/shicho/koho/health/covid19_ji.html',
           divider: true
         },
         {
           title: this.$t('Cancelled public events'),
           link:
-            'https://www.city.fukuoka.lg.jp/hofuku/hokenyobo/health/kansen/nCorV.html#ftev'
+            'https://www.city.fukuoka.lg.jp/shicho/koho/charm/evca.html'
         },
         {
           title: this.$t('Fukuoka City Subway Traffic'),
