@@ -97,7 +97,7 @@
     "for Enterprises and Employees": "事業者の方へ",
     "Official statements from Task Force": "福岡市新型コロナウイルス感染症対策本部報",
     "Fukuoka City Subway Traffic": "福岡市地下鉄ラッシュ時の車内混雑状況",
-    "Cancelled public events": "市主催のイベント、公共施設、区役所の対応",
+    "Cancelled public events": "福岡市主催のイベント・行事等",
     "Change stat at stations": "主要駅における人の流れの推移（内閣官房サイト）",
     "Government official website": "福岡市公式ホームページ",
     "Message from Governor Takashima": "市長からのメッセージ",
@@ -152,7 +152,7 @@ export default {
         {
           title: this.$t('Cancelled public events'),
           link:
-            'https://www.city.fukuoka.lg.jp/shicho/koho/health/covid19_ci.html#ev'
+            'https://www.city.fukuoka.lg.jp/shicho/koho/charm/evca.html'
         },
         {
           title: this.$t('Fukuoka City Subway Traffic'),
