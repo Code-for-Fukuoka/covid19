@@ -9,7 +9,7 @@
     <div class="date">
       <span>確認日時 </span>
       <time :datetime="formattedDate">{{ date }}</time>
-      （福岡市オープンデータを平日17:00頃に確認して更新）
+      （福岡市オープンデータを1時間毎に確認して更新）
     </div>
   </div>
 </template>

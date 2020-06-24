@@ -1,37 +1,48 @@
 <template>
-  <v-card class="DataView pa-1">
-    <v-toolbar flat class="DataView-content">
-      <div class="DataView-TitleContainer">
-        <h3 :id="titleId" class="DataView-ToolbarTitle">
-          {{ title }}
-        </h3>
-        <slot name="button" />
+  <v-card class="DataView">
+    <div class="DataView-Inner">
+      <div class="DataView-Header">
+        <div class="DataView-Title">
+          <h3 :id="titleId">
+            {{ title }}
+          </h3>
+          <p v-if="category" class="DataView-Category">({{ category }})</p>
+          <slot name="kindButton" />
+          <slot name="areaButton" />
+        </div>
+        <slot name="infoPanel" />
+        <div class="DataView-SelectSpace">
+          <slot name="selectDate" />
+        </div>
       </div>
-      <v-spacer />
-      <slot name="infoPanel" />
-    </v-toolbar>
-    <v-card-text
-      :class="
-        $vuetify.breakpoint.xs ? 'DataView-CardTextForXS' : 'DataView-CardText'
-      "
-    >
-      <slot />
-    </v-card-text>
-    <v-footer class="DataView-Footer">
-      <time :datetime="formattedDate">{{ date }} 更新</time>
-      <a
-        v-if="url"
-        class="OpenDataLink"
-        :href="url"
-        target="_blank"
-        rel="noopener"
+      <v-card-text
+        :class="
+          $vuetify.breakpoint.xs
+            ? 'DataView-CardTextForXS'
+            : 'DataView-CardText'
+        "
       >
-        オープンデータへのリンク
-        <v-icon class="ExternalLinkIcon" size="15">
-          mdi-open-in-new
-        </v-icon>
-      </a>
-    </v-footer>
+        <slot />
+        <div class="DataView-AnnotationStyle">
+          <slot name="annotation" />
+        </div>
+      </v-card-text>
+      <v-footer class="DataView-Footer">
+        <time :datetime="formattedDate">{{ date }} 更新</time>
+        <a
+          v-if="url"
+          class="OpenDataLink"
+          :href="url"
+          target="_blank"
+          rel="noopener"
+        >
+          オープンデータへのリンク
+          <v-icon class="ExternalLinkIcon" size="15">
+            mdi-open-in-new
+          </v-icon>
+        </a>
+      </v-footer>
+    </div>
   </v-card>
 </template>
 
@@ -42,6 +53,7 @@ import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 @Component
 export default class DataView extends Vue {
   @Prop() private title!: string
+  @Prop() private category!: string
   @Prop() private titleId!: string
   @Prop() private date!: string
   @Prop() private url!: string
@@ -53,10 +65,28 @@ export default class DataView extends Vue {
 
 <style lang="scss">
 .DataView {
+  @include card-container();
+
+  height: 100%;
+  &-Header {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+    padding: 0 10px;
+    @include largerThan($medium) {
+      padding: 0 5px;
+    }
+    @include largerThan($large) {
+      width: 100%;
+      flex-flow: row;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+  }
   &-DataInfo {
     &-summary {
       color: $gray-2;
-      font-family: Hiragino Sans;
+      font-family: Hiragino Sans, sans-serif;
       font-style: normal;
       font-size: 30px;
       line-height: 30px;
@@ -74,39 +104,54 @@ export default class DataView extends Vue {
       display: inline-block;
     }
   }
-}
-.DataView {
-  @include card-container();
-  height: 100%;
-  &-content {
-    height: auto !important;
-    .v-toolbar__content {
-      align-items: start;
-    }
-  }
-  &-Header {
-    background-color: transparent !important;
-    height: auto !important;
-  }
-  &-TitleContainer {
-    padding: 14px 0 8px;
-    color: $gray-2;
+  &-Inner {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 22px;
+    height: 100%;
   }
   &-Title {
-    @include card-h2();
+    width: 100%;
+    margin-bottom: 10px;
+    @include largerThan($large) {
+      width: 50%;
+    }
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      font-weight: normal;
+      color: $gray-2;
+    }
   }
-  &-ToolbarTitle {
-    font-size: 1.25rem;
-    font-weight: normal;
-    line-height: 1.5;
+
+  &-Category {
+    margin-bottom: 0px !important;
   }
+
+  &-SelectSpace {
+    width: 100%;
+    padding-left: 2px !important;
+  }
+
+  &-SelectSpace .v-label {
+    font-size: 14px !important;
+  }
+
   &-CardText {
-    margin-bottom: 46px;
-    margin-top: 35px;
+    margin: 16px 0;
   }
   &-CardTextForXS {
-    margin-bottom: 46px;
-    margin-top: 70px;
+    margin: 20px 0;
+  }
+
+  &-AnnotationStyle small {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &-Embed {
+    background-color: $gray-5;
   }
   &-Footer {
     background-color: $white !important;
