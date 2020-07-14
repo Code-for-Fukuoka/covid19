@@ -87,7 +87,7 @@
     />
     <text
       class="black text"
-      transform="translate(20 95)"
+      transform="translate(15 95)"
       :dx="getAdjustX(検査実施人数)"
     >
       <tspan>{{ 検査実施人数 }}</tspan>
