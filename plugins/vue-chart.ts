@@ -41,7 +41,12 @@ const VueChartPlugin: Plugin = () => {
           default: () => {}
         }
       },
-      mounted(): void {
+      watch: {
+        options() {
+          this.renderChart(this.chartData, this.options)
+        }
+      },
+      mounted() {
         this.renderChart(this.chartData, this.options)
       }
     }

@@ -1,8 +1,24 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <template v-slot:button>
+    <template v-slot:kindButton>
       <data-selector v-model="dataKind" />
     </template>
+    <template v-slot:selectDate>
+      <v-switch
+        v-model="switch1"
+        label="表示期間を指定する"
+      />
+      <div v-show="switch1">
+        <date-select-slider
+          :arr-type="arrKind"
+          :chart-data="chartData"
+          :value="[sliderMin, sliderMax]"
+          :slider-min="sliderMin"
+          :slider-max="sliderMax"
+          @sliderInput="sliderUpdate"
+        />
+      </div>
+　　</template>
     <bar
       :chart-id="chartId"
       :chart-data="displayData"
@@ -25,9 +41,11 @@
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import DateSelectSlider from '@/components/DateSelectSlider.vue'
+import makeRecentData from '@/utils/makeRecentData'
 
 export default {
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: { DataView, DataSelector, DataViewBasicInfoPanel, DateSelectSlider },
   props: {
     title: {
       type: String,
@@ -67,48 +85,76 @@ export default {
   },
   data() {
     return {
-      dataKind: 'transition'
+      dataKind: 'transition',
+      arrKind: 'single',
+      switch1: true,
+      graphRange: [0, 1],
+      displayWidth: 'normal'
     }
   },
   computed: {
+    sliderMin() {
+      if (!this.chartData || this.chartData.length === 0) {
+        return 1
+      }
+      const graphData = {
+        date: this.date,
+        graphData: this.chartData
+      }
+      const twoMonthAgo = makeRecentData(graphData)
+      return twoMonthAgo
+    },
+    sliderMax() {
+      if (!this.chartData || this.chartData.length === 0) {
+        return 1
+      }
+      this.sliderUpdate([this.sliderMin, this.chartData.length - 1])
+      return this.chartData.length - 1
+    },
     displayCumulativeRatio() {
-      const lastDay = this.chartData.slice(-1)[0].cumulative
-      const lastDayBefore = this.chartData.slice(-2)[0].cumulative
+      const lastDay = this.chartData[this.graphRange[1]].cumulative
+      const lastDayBefore = this.chartData[this.graphRange[1] - 1].cumulative
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayTransitionRatio() {
-      const lastDay = this.chartData.slice(-1)[0].transition
-      const lastDayBefore = this.chartData.slice(-2)[0].transition
+      const lastDay = this.chartData[this.graphRange[1]].transition
+      const lastDayBefore = this.chartData[this.graphRange[1] - 1].transition
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
       if (this.dataKind === 'transition') {
         return {
-          lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
-          sText: `実績値（前日比：${this.displayTransitionRatio} ${this.unit}）`,
+          lText: `${this.chartData[
+            this.graphRange[1]
+          ].transition.toLocaleString()}`,
+          sText: `${this.chartData[this.graphRange[1]].label} 実績値（前日比：${
+            this.displayTransitionRatio
+          } ${this.unit}）`,
           unit: this.unit
         }
       }
       return {
-        lText: this.chartData[
-          this.chartData.length - 1
-        ].cumulative.toLocaleString(),
-        sText: `${this.chartData.slice(-1)[0].label} 累計値（前日比：${
-          this.displayCumulativeRatio
-        } ${this.unit}）`,
+        lText: this.chartData[[this.graphRange[1]]].cumulative.toLocaleString(),
+        sText: `${this.chartData[0].label} - ${
+          this.chartData[this.graphRange[1]].label
+        } 累計値（前日比：${this.displayCumulativeRatio} ${this.unit}）`,
         unit: this.unit
       }
     },
     displayData() {
+      const displayArr = []
+      for (let i = this.graphRange[0]; i <= this.graphRange[1]; i++) {
+        displayArr.push(this.chartData[i])
+      }
       if (this.dataKind === 'transition') {
         return {
-          labels: this.chartData.map(d => {
+          labels: displayArr.map(d => {
             return d.label
           }),
           datasets: [
             {
               label: this.dataKind,
-              data: this.chartData.map(d => {
+              data: displayArr.map(d => {
                 return d.transition
               }),
               backgroundColor: '#4A7BBA',
@@ -118,13 +164,13 @@ export default {
         }
       }
       return {
-        labels: this.chartData.map(d => {
+        labels: displayArr.map(d => {
           return d.label
         }),
         datasets: [
           {
             label: this.dataKind,
-            data: this.chartData.map(d => {
+            data: displayArr.map(d => {
               return d.cumulative
             }),
             backgroundColor: '#4A7BBA',
@@ -238,6 +284,9 @@ export default {
     }
   },
   methods: {
+    sliderUpdate(sliderValue) {
+      this.graphRange = sliderValue
+    },
     formatDayBeforeRatio(dayBeforeRatio) {
       const dayBeforeRatioLocaleString = dayBeforeRatio.toLocaleString()
       switch (Math.sign(dayBeforeRatio)) {
