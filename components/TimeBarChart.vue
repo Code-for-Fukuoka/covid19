@@ -218,7 +218,7 @@ export default {
                 maxRotation: 90,
                 minRotation: 0,
                 callback: label => {
-                  return label.split('/')[0]+'月'+label.split('/')[1]+'日'
+                  return label.split('/')[0] + '月' + label.split('/')[1] + '日'
                 }
               }
             },
