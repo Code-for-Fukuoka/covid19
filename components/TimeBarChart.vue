@@ -222,7 +222,7 @@ export default {
                 }
               }
             },
-            /*{
+            /* {
               id: 'month',
               stacked: true,
               gridLines: {
@@ -262,7 +262,7 @@ export default {
               time: {
                 unit: 'month'
               }
-            }*/
+            } */
           ],
           yAxes: [
             {
