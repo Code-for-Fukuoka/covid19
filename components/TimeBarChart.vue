@@ -215,14 +215,14 @@ export default {
                 fontSize: 9,
                 maxTicksLimit: 20,
                 fontColor: '#808080',
-                maxRotation: 0,
+                maxRotation: 90,
                 minRotation: 0,
                 callback: label => {
-                  return label.split('/')[1]
+                  return label.split('/')[0] + '月' + label.split('/')[1] + '日'
                 }
               }
             },
-            {
+            /* {
               id: 'month',
               stacked: true,
               gridLines: {
@@ -262,7 +262,7 @@ export default {
               time: {
                 unit: 'month'
               }
-            }
+            } */
           ],
           yAxes: [
             {
