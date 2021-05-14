@@ -32,6 +32,7 @@
         :unit="displayInfo.unit"
       />
     </template>
+    各区保健所に設置していた相談窓口（帰国者・接触者相談センター）については、「新型コロナウイルス感染症相談ダイヤル（受診・相談センター）」に集約しています。
   </data-view>
   <template v-if="titleId === 'number-of-reports-to-covid19-consultation-desk'">
     各区保健所に設置していた相談窓口（帰国者・接触者相談センター）については、「新型コロナウイルス感染症相談ダイヤル（受診・相談センター）」に集約しています。
