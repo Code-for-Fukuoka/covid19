@@ -1,6 +1,6 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <div v-if="title-id === 'number-of-reports-to-covid19-consultation-desk'"> 各区保健所に設置していた相談窓口（帰国者・接触者相談センター）については、「新型コロナウイルス感染症相談ダイヤル（受診・相談センター）」に集約しています。 </div>
+    <div v-if=":title-id === 'number-of-reports-to-covid19-consultation-desk'"> 各区保健所に設置していた相談窓口（帰国者・接触者相談センター）については、「新型コロナウイルス感染症相談ダイヤル（受診・相談センター）」に集約しています。 </div>
     <template v-slot:kindButton>
       <data-selector v-model="dataKind" />
     </template>
