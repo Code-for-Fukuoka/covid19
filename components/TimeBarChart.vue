@@ -33,13 +33,18 @@
       />
     </template>
     <template v-if="titleId == 'number-of-reports-to-covid19-consultation-desk'">
-      
-      ※各区保健所に設置していた相談窓口（帰国者・接触者相談センター）については、「新型コロナウイルス感染症相談ダイヤル（受診・相談センター）」に集約しています。
+      <div class="tempinfo">※各区保健所に設置していた相談窓口（帰国者・接触者相談センター）については、「新型コロナウイルス感染症相談ダイヤル（受診・相談センター）」に集約しています。</div>
     </template>
   </data-view>
 </template>
 
-<style></style>
+<style>
+.tempinfo{
+  margin-top: 1em;
+  color: red;
+}
+
+</style>
 
 <script>
 import DataView from '@/components/DataView.vue'
