@@ -135,7 +135,7 @@ export default {
         {
           icon: 'mdi-calendar-month',
           title: this.$t('Daily'),
-          link: 'https://www.city.fukuoka.lg.jp/hofuku/hokenyobo/health/kansen/cohs.html',
+          link: 'https://www.city.fukuoka.lg.jp/hofuku/coronataisaku/health/jirei/cohs_.html',
           divider: true
         },
         {
@@ -152,7 +152,7 @@ export default {
         {
           title: this.$t('Cancelled public events'),
           link:
-            'https://www.city.fukuoka.lg.jp/shicho/koho/charm/evca.html'
+            'https://www.city.fukuoka.lg.jp/shicho/koho/health/covid19_ci.html#ev'
         },
         {
           title: this.$t('Fukuoka City Subway Traffic'),
