@@ -12,6 +12,10 @@
       :text="'自分や家族の症状に不安や心配があればまずは電話相談をどうぞ'"
       :btn-text="'相談の手順を見る'"
     />
+    <static-info
+      class="mb-4"
+      :text="'このサイトにおける陽性患者は船内陽性者を含みません。検査実施数は船内陽性者関連を含みません。'"
+    />
     <v-row class="DataBlock">
       <v-col cols="12" md="6" class="DataCard">
         <svg-card
